@@ -1,0 +1,54 @@
+#Description:How to install and configure SonarQube on CentOS 7
+
+#author:Joshua,febuary 2022
+
+
+echo "just be patient the installation is about to start thank's : "
+
+sleep 3
+
+sudo yum update -y
+
+sleep 3
+
+sudo yum install java-11-openjdk-devel -y
+
+sleep 3
+
+sudo yum install java-11-openjdk -y
+
+sleep 3
+
+cd /opt
+
+sleep 3
+
+sudo yum install wget -y
+
+sleep 3
+
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip
+
+sleep 3
+
+sudo unzip /opt/sonarqube-9.3.0.51899.zip
+
+sleep 3
+
+sudo chown -R vagrant:vagrant /opt/sonarqube-9.3.0.51899
+
+sleep 3
+
+cd /opt/sonarqube-9.3.0.51899/bin/linux-x86-64
+
+sleep 3
+
+echo "Now sonar.sh will start,thanks : "
+
+sleep 3
+
+./sonar.sh start
+
+
+
+		   
