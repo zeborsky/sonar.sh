@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#Description:installation of jenkins
+#Description:Intallation of jenkins
 
-#Author:joshua
+#Author:Joshua
 
-Date:Febuary 2022
+#Date:Febuary 2022
 
-echo "You are about to a have jenkins installation on your system : "
+echo "you are about to have a jenkins installation experince : "
 
 sleep 4
 
@@ -15,27 +15,34 @@ yum install java-1.8.0-openjdk-devel
 sleep 3
 
 wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo 
-
+  
 sleep 3
-
+    
 sed -i 's/gpgcheck=1/gpgcheck=0/g' /etc/yum.repos.d/jenkins.repo
+      
+sleep 3
+        
+yum install jenkins
+	  
+sleep3
+	    
+systemctl start jenkins
+	      
+sleep 3
+	        
+systemctl status jenkins
 
 sleep 3
 
-yum install jenkins
+firewall-cmd --permanent --zone=public --add-port=8080/tcp 
 
- sleep3
+sleep 3
 
-  systemctl start jenkins
-
-   sleep 3
-
-    systemctl status jenkins
-
-    sleep 3
-
-    firewall-cmd --permanent --zone=public --add-port=8080/tcp
-
-    sleep 3
+firewall-cmd --reload
 
 
+
+
+
+		  
+		   
